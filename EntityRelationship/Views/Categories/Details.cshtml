@@ -1,0 +1,49 @@
+﻿@model EntityRelationship.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+    @*header*@
+    <div class="row MvcView-header">
+        <div class="col d-none d-sm-block">
+            <h2 class="MvcView-Title px-2">جزئیات ....</h2>
+        </div>
+        <div class="col-auto text-end">
+            @Html.ActionLink("بازگشت به لیست", "Index", null, new { @class = "btn-back" })
+        </div>
+    </div>
+    @*main*@
+<div class="MvcView-Details-Delete">
+
+            <div class="header-dd">
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </div>
+            <div class="body-dd">
+               @Html.DisplayFor(model => model.CategoryName)
+            </div>
+            <div class="header-dd">
+                @Html.DisplayNameFor(model => model.CategoryDescription)
+            </div>
+            <div class="body-dd">
+               @Html.DisplayFor(model => model.CategoryDescription)
+            </div>
+
+
+</div>
+<p class="text-center mt-3">
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.CategoryId }, new {@class= "btn-save" }) 
+</p>
+@section Style{
+    @*My Css Code*@
+}
+@section Script{
+    <script>
+        @*for hover Right navbar slider *@
+        $(document).ready(function () {
+            $('#dashboard').addClass('active');
+        });
+    </script>
+}
+
+
+
